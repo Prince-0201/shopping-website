@@ -25,10 +25,10 @@ app.use(morgan('dev'))
 app.use('/api/v1/auth',authRoutes);
 app.use('/api/v1/category', categoryRoutes);
 app.use('/api/v1/product',productRoutes);
-app.use(express.static(path.join(__dirname, './client/build')))
+app.use(express.static(path.join(__dirname, './client/public')))
 //rest api
 app.use('*',function(req,res){
-    res.sendFile(path.join(__dirname, './client/build/index.html'))
+    res.sendFile(path.join(__dirname, './client/public/index.html'))
 });
 //PORT
 const PORT=process.env.PORT || 8080;
